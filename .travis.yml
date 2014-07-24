@@ -2,4 +2,6 @@ language: ruby
 rvm:
   - '2.1.1'
 env:
-  - DB=postgresql
+  - DB=postgresqlt
+
+before_script: psql create user davudovali password '22ad88em' SUPERUSER;
