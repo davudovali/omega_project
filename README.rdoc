@@ -1,28 +1,11 @@
-== README
+Этот проект создается как треккер личных расходов. Основной функционал:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+  1. Учет денежных средств с возможностью разбивки по разным счетам, картам.
 
-Things you may want to cover:
+  2. Учет понесенных затрат. 
 
-* Ruby version
+  3. Внесение будущих затрат с построением графика остатка денежных средств с учетом предпологаемого движения денежных средств.
 
-* System dependencies
+  4. Ежемесячный отчет о понесенных затратах с учетом контрагентов и категорий.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+  

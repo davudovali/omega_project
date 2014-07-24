@@ -17,19 +17,17 @@
 
 local: &local
   adapter: postgresql 
-  username: davudovali
-  password: 22ad88em
+  username: name
+  password: password
   host: localhost
-
+  
 development:
   <<: *local 
   database: omega_project_dev
 
 test:
-  adapter: postgresql
-  database: travis_ci_test
-  username: postgres
-
+  <<: *local
+  database: omega_project_test
 
 production:
   <<: *local
