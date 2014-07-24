@@ -20,15 +20,15 @@ local: &local
   username: name
   password: password
   host: localhost
-
+  
 development:
   <<: *local 
-  database: pm_dev
+  database: omega_project_dev
 
 test:
   <<: *local
-  database: pm_test
+  database: omega_project_test
 
 production:
   <<: *local
-  database: pm_production
+  database: omega_project_production
