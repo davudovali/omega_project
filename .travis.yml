@@ -1,15 +1,3 @@
 language: ruby
 rvm:
 - ruby 2.1.1
-deploy:
-  provider:
-    provider: cloudfoundry
-  api: ''
-  username: davudovali@gmail.com
-  password:
-    secure: eaO/7Wbgci+naO1RLEkqisaaK/RVehdLXl4pb7GdoQR9qSQaPEYySbwGQlNkxQH7psXgH6LwlifEUnnsagBTeKZpu4U65XB6F+SqEp5fEvc6hB+NSXuC+2H7+uC8vr7UWEDUkrNI6nPVunC5TPqydvESaUl5rAcyuMSYEWfxqKE=
-  organization: omega_project
-  space: ''
-  on:
-    repo: davudovali/omega_project
-    branch: dev
