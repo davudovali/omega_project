@@ -26,8 +26,10 @@ development:
   database: omega_project_dev
 
 test:
-  <<: *local
-  database: omega_project_test
+  adapter: postgresql
+  database: travis_ci_test
+  username: postgres
+
 
 production:
   <<: *local
