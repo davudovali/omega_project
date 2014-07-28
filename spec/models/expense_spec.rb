@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Expense do
   before(:all) do
-    @user = User.last || FactoryGirl.create(:user)
+    @user = User.first || FactoryGirl.create(:user)
     @expense = FactoryGirl.create(:expense, user: @user)
     @transaction = FactoryGirl.create(:transaction, expense: @expense)
   end
