@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Wallet do
-  before(:all) do
+  before(:each) do
     @user = FactoryGirl.create(:user)
     @wallet = FactoryGirl.create(:wallet, user: @user)
     @transaction = FactoryGirl.create(:transaction, wallet: @wallet)

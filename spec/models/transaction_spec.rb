@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Transaction do
-  before(:all) do
+  before(:each) do
     @expense = FactoryGirl.create(:expense)
     @wallet = FactoryGirl.create(:wallet)
     @transaction = FactoryGirl.create(:transaction,
