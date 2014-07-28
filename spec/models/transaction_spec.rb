@@ -1,20 +1,20 @@
 require 'rails_helper'
 
 describe Transaction do
-  before(:each) do
-    @expense = FactoryGirl.create(:expense)
-    @wallet = FactoryGirl.create(:wallet)
-    @transaction = FactoryGirl.create(:transaction,
-                                      wallet: @wallet,
-                                      expense: @expense)
+  before(:all) do
+    @expense = Expense.last || FactoryGirl.create(:expense)
+    @wallet = Wallet.last || FactoryGirl.create(:wallet)
+    @transaction = FactoryGirl.create(:transaction)
+    @transaction.wallet = @wallet
+    @transaction.expense = @expense
   end
 
   it "has wallet" do
-    expect(@transaction.wallet).to be(@wallet)
+    expect(@transaction.wallet.id).to be(@wallet.id)
   end
 
   it "has expense" do
-    expect(@transaction.expense).to be(@expense)
+    expect(@transaction.expense.id).to be(@expense.id)
   end
 
   it "has a valid factory" do

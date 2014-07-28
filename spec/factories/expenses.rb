@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :expense do
-    name { Faker::Lorem.word }
+    name { Faker::Lorem.characters(20) }
     user { User.all[rand(0...User.all.size)] }
   end
 end

@@ -1,14 +1,16 @@
 require 'rails_helper'
 
 describe Wallet do
-  before(:each) do
-    @user = FactoryGirl.create(:user)
+  before(:all) do
+    @user = User.first || FactoryGirl.create(:user)
     @wallet = FactoryGirl.create(:wallet, user: @user)
     @transaction = FactoryGirl.create(:transaction, wallet: @wallet)
   end
 
+  
+
   it "has user" do
-    expect(@wallet.user).to be(@user)
+    expect(@wallet.user.id).to be(@user.id)
   end
 
   it "has transaction" do
