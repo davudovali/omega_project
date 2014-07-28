@@ -2,7 +2,9 @@
 
 FactoryGirl.define do
   factory :wallet do
-    summ "9.99"
-    currency ""
+    name { Faker::Lorem.word }
+    summ { Faker::Number.number(4) }
+    currency { ["USD", "RUB", "EUR", "GBP"][rand(0..3)] }
+    user { User.all[rand(0...User.all.size)] }
   end
 end

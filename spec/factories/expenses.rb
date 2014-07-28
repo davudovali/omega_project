@@ -2,6 +2,7 @@
 
 FactoryGirl.define do
   factory :expense do
-    name "MyString"
+    name { Faker::Lorem.word }
+    user { User.all[rand(0...User.all.size)] }
   end
 end

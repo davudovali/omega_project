@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 20140726050614) do
   enable_extension "plpgsql"
 
   create_table "appointments", force: true do |t|
-    t.string   "name"
     t.integer  "wallet_id"
     t.integer  "wallet_transaction_id"
     t.datetime "created_at"
@@ -32,14 +31,13 @@ ActiveRecord::Schema.define(version: 20140726050614) do
   end
 
   create_table "transactions", force: true do |t|
-    t.string   "name"
     t.integer  "wallet_id"
     t.integer  "expense_id"
     t.decimal  "summ"
     t.string   "goal"
     t.date     "date"
     t.string   "type_of_transaction"
-    t.string   "string"
+    t.string   "currency"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -53,7 +51,6 @@ ActiveRecord::Schema.define(version: 20140726050614) do
   end
 
   create_table "wallet_transactions", force: true do |t|
-    t.string   "name"
     t.decimal  "summ"
     t.date     "date"
     t.datetime "created_at"

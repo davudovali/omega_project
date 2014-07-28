@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
-	has_many :wallets
-	validates :name, length: {in: 3..16}, uniqueness: true
+	has_many :wallets, dependent: :destroy
+  has_many :expenses, dependent: :destroy
+	validates :name, length: {in: 1..25}, uniqueness: true
 	validates :email, uniqueness: true
-	validates :password, length: {in: 6..20}
+	validates :password, length: {in: 6..30}
 
 end

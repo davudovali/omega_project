@@ -2,10 +2,11 @@
 
 FactoryGirl.define do
   factory :transaction do
-    summ "9.99"
-    goal "MyString"
-    date "2014-07-26"
-    type_of_transaction "MyString"
-    string "MyString"
+    summ { Faker::Number.number(4) }
+    currency { ["USD", "RUB", "EUR", "GBP"][rand(0..3)] }
+    goal { Faker::Lorem.sentence }
+    date { Faker::Business.credit_card_expiry_date} 
+    wallet { Wallet.all[rand(0...Wallet.all.size)] }
+    expense { Expense.all[rand(0...Expense.all.size)] }
   end
 end
