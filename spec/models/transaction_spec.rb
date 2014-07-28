@@ -4,8 +4,9 @@ describe Transaction do
   before(:all) do
     @expense = Expense.last || FactoryGirl.create(:expense)
     @wallet = Wallet.last || FactoryGirl.create(:wallet)
-    @transaction = FactoryGirl.create(:transaction, wallet: @wallet, expense: @expense)
-
+    @transaction = FactoryGirl.create(:transaction)
+    @transaction.wallet = @wallet
+    @transaction.expense = @expense
   end
 
   it "has wallet" do
