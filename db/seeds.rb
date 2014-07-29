@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+  User.destroy_all
+
+  2.times {FactoryGirl.create :user}
+
+  6.times {FactoryGirl.create :wallet}
+
+  6.times {FactoryGirl.create :expense}
+
+  30.times {FactoryGirl.create :transaction}
+
