@@ -17,6 +17,8 @@ gem 'turbolinks'
 
 gem 'jbuilder', '~> 2.0'
 
+gem 'devise'
+
 group :development, :test do
 	gem 'pry-rails'
 

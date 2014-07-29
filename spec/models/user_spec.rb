@@ -1,23 +1,17 @@
 require 'rails_helper'
 
 describe User do
-  before(:all) do
-    @user = User.last || FactoryGirl.create(:user)
-    @wallet =  FactoryGirl.create(:wallet, user: @user)
-    @expense =  FactoryGirl.create(:expense, user: @user)
+
+  it "has wallet association" do
+    expect(FactoryGirl.build(:user)).to respond_to(:wallets)
   end
 
-
-  it "has wallet" do
-    expect(@user.wallets.last.id).to be(@wallet.id)
-  end
-
-  it "has expense" do
-    expect(@user.expenses.last.id).to be(@expense.id)
+  it "has expense association" do
+    expect(FactoryGirl.build(:user)).to respond_to(:expenses)
   end
 
   it "has a valid factory" do
-    expect(@user).to be_valid
+    expect(FactoryGirl.build(:user)).to be_valid
   end
 
 

@@ -1,24 +1,15 @@
 require 'rails_helper'
 
 describe Wallet do
-  before(:all) do
-    @user = User.first || FactoryGirl.create(:user)
-    @wallet = FactoryGirl.create(:wallet, user: @user)
-    @transaction = FactoryGirl.create(:transaction, wallet: @wallet)
+ it "has a valid factory" do
+    expect(FactoryGirl.build(:wallet)).to be_valid
   end
 
-  
-
-  it "has user" do
-    expect(@wallet.user.id).to be(@user.id)
+  it "has user association" do
+    expect(FactoryGirl.build(:wallet)).to respond_to(:user)
   end
 
-  it "has transaction" do
-    expect(@wallet.transactions.first.id).to be(@transaction.id)
+  it "has transactions association" do
+    expect(FactoryGirl.build(:wallet)).to respond_to(:transactions)
   end
-
-  it "has a valid factory" do
-    expect(@wallet).to be_valid
-  end
-
 end
