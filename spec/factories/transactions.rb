@@ -6,7 +6,7 @@ FactoryGirl.define do
     currency { ["USD", "RUB", "EUR", "GBP"][rand(0..3)] }
     goal { Faker::Lorem.sentence }
     date { Faker::Business.credit_card_expiry_date} 
-    wallet { Wallet.all[rand(0...Wallet.all.size)] }
-    expense { Expense.all[rand(0...Expense.all.size)] }
+    association :wallet
+    association :expense
   end
 end

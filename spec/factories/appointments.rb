@@ -2,8 +2,6 @@
 
 FactoryGirl.define do
   factory :appointment do
-    name "MyString"
-    belongs_to ""
-    belongs_to ""
+    association :wallet
   end
 end
