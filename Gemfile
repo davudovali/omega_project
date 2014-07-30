@@ -19,6 +19,10 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'devise'
 
+gem 'simple_form'
+
+gem 'twitter-bootstrap-rails'
+
 group :development, :test do
 	gem 'pry-rails'
 
