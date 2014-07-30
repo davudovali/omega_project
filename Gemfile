@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 
+gem 'rails_12factor'
+
 gem 'rails', '4.1.4'
 
 gem 'pg'
