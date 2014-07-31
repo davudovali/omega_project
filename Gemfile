@@ -23,7 +23,8 @@ gem 'devise'
 
 gem 'simple_form'
 
-gem 'twitter-bootstrap-rails'
+
+gem 'autoprefixer-rails'
 
 group :development, :test do
 	gem 'pry-rails'
