@@ -1,7 +1,5 @@
- *= require bootstrap.min
- *= require_self
- *= require_tree .
- */
+@import 'bootstrap.min.css';
+
 
 @font-face {
   font-family: 'Glyphicons Halflings';
