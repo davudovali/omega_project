@@ -8,4 +8,4 @@
 
   4. Ежемесячный отчет о понесенных затратах с учетом контрагентов и категорий.
 
-  Ссылка на heroku: http://arcane-citadel-3589.herokuapp.com/ 
+  Ссылка на heroku: http://rbomegaproject.herokuapp.com/ 

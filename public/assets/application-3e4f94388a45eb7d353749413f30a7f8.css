@@ -11,61 +11,17 @@
 }
 
 body {
-  background: url('121.jpg');
-  background-size: 100% auto;
-
-}
-
-form {
-  margin-left: 40%;
-  width: 400px;
-}
-
-form input {
-  width: 400px;
-  border: 1px solid red;
-  border-radius: 2px;
-  background: none;
-}
-
-form input:focus {
-  background: none;
-}
-
-
-h2 {
-  text-align: center;
-}
-
-.button {
-  background: none;
-  border: 1px solid red;
-  color: red;
-  margin-top: 2%;
-}
-
-div.form-inputs {
-  margin-bottom: 10px;
-}
-
-div#sign_in_links {
-  margin-top: 15px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  text-align: center;
-}
-
-div#sign_in_links > a {
-  display: inline-block;
-  margin-right: 10px;
   margin-left: 10px;
-  color: black;
+  font-family: Arial;
+
 }
-
-
-
-
+form {
+  width: 200px;
+  margin-left: 40%;
+}
+form input {
+    width: 200px;
+}
 
 
 /*

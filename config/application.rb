@@ -29,6 +29,8 @@ module OmegaProject
       g.assets = false
       g.helper = false
       g.fixture_replacement :factory_girl, :dir => 'spec/factories'
+
     end
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
   end
 end
