@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
 ruby '2.1.1'
+
+gem 'will_paginate'
+
 gem 'rails_12factor'
 
 gem 'rails', '4.1.4'
