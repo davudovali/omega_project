@@ -4,4 +4,9 @@
 <li><%= link_to i.goal + " - " + i.summ.to_s,i %></li>
 <% end %>
 </ul>
-<%= will_paginate @transactions %>
+<div class="digg_pagination">
+    <div class="page_info">
+      <%= page_entries_info @transactions %>
+    </div>
+    <%= will_paginate @transactions, :container => false %>
+  </div>
