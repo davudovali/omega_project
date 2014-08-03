@@ -1,7 +1,7 @@
 <h1>Все транзакции</h1>
 <ul>
 <% @transactions.each do |i| %>
-<li><%= link_to i.goal, i %></li>
+<li><%= link_to i.goal + " - " + i.summ.to_s,i %></li>
 <% end %>
 </ul>
 <%= will_paginate @transactions %>
