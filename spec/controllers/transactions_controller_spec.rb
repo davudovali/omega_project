@@ -1,7 +1,7 @@
-require 'rails_helper'
+=begin require 'rails_helper'
 
 RSpec.describe TransactionsController, :type => :controller do
-  
+ 
   describe "show action" do
     it "renders show template if an transaction is found" do 
       transaction = create(:transaction)
@@ -63,4 +63,5 @@ RSpec.describe TransactionsController, :type => :controller do
       expect(response).to be_success
     end
   end  
-end  
+end 
+=end 
