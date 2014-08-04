@@ -1,0 +1,19 @@
+h1 Wallets
+table.table
+	thead
+		tr
+			th= Wallet.human_attribute_name(:name)
+			th= Wallet.human_attribute_name(:summ)
+			th= Wallet.human_attribute_name(:currency)
+			th Action
+		tbody
+			-	@wallets.each do |w|
+				tr
+					td= link_to w.name, wallet_path(w)	
+					td= w.summ
+					td= w.currency
+					td
+						= link_to 'Edit', edit_wallet_path(w)
+						|	 |
+						= link_to 'Delete',  wallet_path(w), method: :delete, data: { confirm: 'Are you sure?' }
+= link_to 'New', new_wallet_path, class: 'btn'
