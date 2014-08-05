@@ -1,9 +1,0 @@
-<p><%= @wallet.name %></p>
-<p>Summ: <b><%= @wallet.summ %></b></p>
-<ul><% @wallet.transactions.all.each do |i| %>
-  <li><%= i.summ %>  <%= i.currency %>  - <%= link_to i.goal, i %></li>
-
-<% end %>
-</ul>
-
-<%= link_to "Edit", edit_wallet_path(@wallet) %>
