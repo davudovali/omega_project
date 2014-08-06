@@ -1,19 +1,21 @@
 Rails.application.routes.draw do
-  get 'wallets/index'
+  # get 'wallets/index'
 
-  get 'wallets/edit'
+  # get 'wallets/edit'
 
   get 'welcome/index'
 
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'profiles' }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'wallets#index'
   resources :transactions
-  resources :users
-  resources :wallets
+  resources :users do
+    resources :wallets
+  end
+  # resources :wallets, only: [:show, :edit, :update, :destroy]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -1,7 +1,8 @@
 class WalletsController < ApplicationController
-  
+  before_action :find_user
+
   def index
-    @wallets = Wallet.all
+    @wallets = @user.wallets
   end
 
   def new
@@ -10,9 +11,9 @@ class WalletsController < ApplicationController
     
   def create
     params.permit!
-    @wallet = Wallet.create(params[:wallet])
+    @wallet = @user.wallets.create(params[:wallet])
     if @wallet.errors.empty?
-      redirect_to wallets_path
+      redirect_to user_wallets_path
     else
       render "new"  
     end
@@ -24,10 +25,10 @@ class WalletsController < ApplicationController
 
   def update
     params.permit!
-    @wallet = Wallet.find(params[:id])
+    @wallet = @user.wallets.find(params[:id])
     @wallet.update_attributes(params[:wallet])
     if @wallet.errors.empty?
-      redirect_to @wallet
+      redirect_to user_wallets_path
     else
       render "edit"
     end
@@ -36,10 +37,22 @@ class WalletsController < ApplicationController
   def destroy
     @wallet = Wallet.find(params[:id])
     @wallet.destroy
-    redirect_to wallets_path
+
+    redirect_to user_wallets_path
   end
 
   def show
     @wallet = Wallet.find(params[:id])
   end
+
+  private
+
+  def find_user
+    if params[:user_id].nil?
+      redirect_to '/users/sign_in', notice: 'You need to sign in!'       
+    else
+      @user = User.find(params[:user_id])  
+    end
+  end
+
 end
