@@ -1,5 +1,5 @@
 <h1>Редактирование транзакции</h1>
-<%= form_for @transaction do |f| %>
+<%= simple_form_for @transaction do |f| %>
 <%= render partial: "form", locals: { f: f } %>
 <%= f.submit "Сохранить " %>
 <%= link_to "Удалить транзакцию", transaction_path(@transaction),
