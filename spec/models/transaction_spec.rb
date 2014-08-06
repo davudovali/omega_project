@@ -14,5 +14,9 @@ describe Transaction do
     expect(FactoryGirl.build(:transaction)).to be_valid
   end
 
+  it "has valid?" do
+   transaction = Transaction.new(goal:'', summ:'one')
+   expect(transaction).to_not be_valid
+  end
 
-end
+end   
