@@ -1,4 +1,9 @@
 <h1>Все транзакции</h1>
+<p>
+	Сортировка:
+	<%= link_to "Новые сверху", transactions_path(order: "desc") %> |
+	<%= link_to "Старые сверху", transactions_path(order: "asc") %> 
+</p>
 <ul>
 <% @transactions.each do |i| %>
 <li><%= link_to i.goal + " - " + i.summ.to_s,i %></li>
@@ -6,8 +11,8 @@
 </ul>
 <div class="digg_pagination">
 	<div class="page_info">
-  	<%= page_entries_info @transactions %>
-  </div>
+  <%= page_entries_info @transactions %>
+</div>
   <%= will_paginate @transactions, :container => false %>
 </div>
 
