@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :wallet do
-    name { Faker::Lorem.characters(20) }
+    name { Faker::Lorem.word }
     summ { Faker::Number.number(4) }
     currency { ["USD", "RUB", "EUR", "GBP"][rand(0..3)] }
     association :user

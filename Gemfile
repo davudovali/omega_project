@@ -26,6 +26,7 @@ gem 'devise'
 
 gem 'simple_form'
 
+gem 'slim-rails'
 
 gem 'autoprefixer-rails'
 

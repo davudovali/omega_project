@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  get 'wallets/index'
-
-  get 'wallets/edit'
-
+ 
   get 'welcome/index'
 
   devise_for :users
@@ -14,6 +11,7 @@ Rails.application.routes.draw do
   resources :transactions
   resources :users
   resources :wallets
+  resources :expenses
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -1,0 +1,108 @@
+@import url(bootstrap.min.css);
+/* line 5, /Users/alidavudov/Dropbox/My projects/omega_project/app/assets/stylesheets/application.css.sass */
+body {
+  background: #f0f0f0;
+  -webkit-background-size: 100% auto;
+          background-size: 100% auto;
+}
+
+/* line 9, /Users/alidavudov/Dropbox/My projects/omega_project/app/assets/stylesheets/application.css.sass */
+header {
+  position: fixed;
+  width: 100%;
+  border-bottom: 1px solid red;
+  background: rgba(240, 240, 240, 0.95);
+}
+/* line 16, /Users/alidavudov/Dropbox/My projects/omega_project/app/assets/stylesheets/application.css.sass */
+header div {
+  position: relative;
+  display: inline-block;
+  color: red;
+  margin: 10px;
+}
+/* line 22, /Users/alidavudov/Dropbox/My projects/omega_project/app/assets/stylesheets/application.css.sass */
+header div a {
+  color: red;
+  font-size: 1.2em;
+}
+
+/* line 28, /Users/alidavudov/Dropbox/My projects/omega_project/app/assets/stylesheets/application.css.sass */
+#work_place {
+  padding-top: 45px;
+}
+
+/* line 31, /Users/alidavudov/Dropbox/My projects/omega_project/app/assets/stylesheets/application.css.sass */
+form {
+  margin-left: 35%;
+  width: 400px;
+}
+/* line 36, /Users/alidavudov/Dropbox/My projects/omega_project/app/assets/stylesheets/application.css.sass */
+form input {
+  width: 400px;
+  border: 1px solid red;
+  border-radius: 2px;
+  background: none;
+}
+/* line 43, /Users/alidavudov/Dropbox/My projects/omega_project/app/assets/stylesheets/application.css.sass */
+form input:focus {
+  background: none;
+}
+
+/* line 48, /Users/alidavudov/Dropbox/My projects/omega_project/app/assets/stylesheets/application.css.sass */
+h2 {
+  text-align: center;
+}
+
+/* line 52, /Users/alidavudov/Dropbox/My projects/omega_project/app/assets/stylesheets/application.css.sass */
+.button {
+  background: none;
+  border: 1px solid red;
+  color: red;
+  margin-top: 2%;
+}
+
+/* line 59, /Users/alidavudov/Dropbox/My projects/omega_project/app/assets/stylesheets/application.css.sass */
+div.form-inputs {
+  margin-bottom: 10px;
+}
+
+/* line 63, /Users/alidavudov/Dropbox/My projects/omega_project/app/assets/stylesheets/application.css.sass */
+div#sign_in_links {
+  margin-top: 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: center;
+}
+/* line 71, /Users/alidavudov/Dropbox/My projects/omega_project/app/assets/stylesheets/application.css.sass */
+div#sign_in_links a {
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 10px;
+  color: black;
+}
+
+/* This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */

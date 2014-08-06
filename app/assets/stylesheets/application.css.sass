@@ -3,30 +3,78 @@
 
 
 body 
-  background: url('121.jpg')
+  background: rgb(240, 240, 240)
   background-size: 100% auto
+
+ul 
+  display: block
+  margin: 0
+  padding: 0
+  list-style: none
+
+ul:after 
+  display: block
+  content: ' '
+  clear: both
+  float: none
+
+ul.menu > li 
+  float: left
+  position: relative
+
+ul.menu > li > a 
+  display: block
+  padding: 10px
+  text-decoration: none
+  width: 120px
+  text-align: center
+
+
+ul.submenu 
+  display: none
+  position: absolute
+  width: 120px
+  top: 44px
+  left: 0
+
+
+ul.submenu > li 
+  display: block
+
+ul.submenu > li > a 
+  display: block
+  padding: 5px
+  text-decoration: none
+  border-bottom: 1px solid red
+  border-left: 1px solid red
+  border-right: 1px solid red
+  background: rgba(240, 240, 240, 0.95)
+  text-align: center
+
+ul.menu > li:hover > ul.submenu 
+  display: block
+
+#user_menu
+  position: fixed
+  right: 20px
+
+
 
 header
   position: fixed
   width: 100%
   border-bottom: 1px solid red
-  background: rgba(255, 255, 255, 0.70)
+  background: rgba(240, 240, 240, 0.95)
 
-
-  div
-    position: relative 
-    display: inline-block
+  a
     color: red
-    margin: 10px
-
-    a
-      color: red
-      font-size: 1.2em
+    font-size: 1.2em
 
 
 
 #work_place 
   padding-top: 45px
+  margin-left: 20px
 
 form 
   margin-left: 35%
@@ -73,9 +121,6 @@ div#sign_in_links
     margin-right: 10px
     margin-left: 10px
     color: black
-
-#sign-up 
-  display: none
 
 
 

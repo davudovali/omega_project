@@ -1,7 +1,7 @@
 class TransactionsController < ApplicationController
   
   def index 
-    @transactions = Transaction.paginate(per_page: 10, page: params[:page])
+    @transactions = Transaction.paginate(per_page: 30, page: params[:page])
   end
 
   def new

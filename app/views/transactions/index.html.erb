@@ -1,7 +1,7 @@
 <h1>Transactions</h1>
 <ul>
 <% @transactions.each do |i| %>
-<li>Goal:<%= link_to i.goal, i %>  Wallet:<%=link_to i.wallet.name, i.wallet%> Expense:<%=i.expense.name%></br>
+<li>Goal:<%= link_to i.goal, i %>  </br>
 <%= i.summ %>  <%= i.currency %></li>
 <% end %>
 </ul>
