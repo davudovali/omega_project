@@ -1,16 +1,23 @@
 class ExpensesController < ApplicationController
-  def edit
-  end
-
-  def new
-  end
-
-  def update
+  def index
+    @expenses = Expense.all
   end
 
   def show
+    @expense = Expense.find(params[:id])
   end
 
-  def index
+  def new
+    @expense = Expense.new
+  end
+
+  def create
+    params.permit!
+    @expense = Expense.create(params[:expense])
+      if @expense.errors.empty?
+        redirect_to @expense
+      else
+        render "new"  
+      end
   end
 end
