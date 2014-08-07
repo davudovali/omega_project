@@ -1,5 +1,5 @@
 class Wallet < ActiveRecord::Base
-	belongs_to :user
+	belongs_to :user, class_name: User
 	has_many :transactions, dependent: :destroy
 	has_many :appointments, dependent: :destroy
 	has_many :wallet_transactions, :through => :appointments, dependent: :destroy

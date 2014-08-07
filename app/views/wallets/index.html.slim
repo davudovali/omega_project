@@ -9,11 +9,11 @@ table.table
 		tbody
 			-	@wallets.each do |w|
 				tr
-					td= link_to w.name, wallet_path(w)	
+					td= link_to w.name, user_wallet_path(@user, w)	
 					td= w.summ
 					td= w.currency
 					td
-						= link_to 'Edit', edit_wallet_path(w)
+						= link_to 'Edit', edit_user_wallet_path(@user, w)
 						|	 |
-						= link_to 'Delete',  wallet_path(w), method: :delete, data: { confirm: 'Are you sure?' }
-= link_to 'New', new_wallet_path, class: 'btn'
+						= link_to 'Delete',  user_wallet_path(@user, w), method: :delete, data: { confirm: 'Are you sure?' }
+= link_to 'New', new_user_wallet_path, class: 'btn'
