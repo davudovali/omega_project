@@ -2,5 +2,7 @@
 <div class="work_place">
 <p>Цель: <%= @transaction.goal %></p>
 <p>Сумма: <b><%= @transaction.summ %></b></p>
+<p>Создана: <b><%= @transaction.created_at %></b></p>
 <%= link_to "Редактировать", edit_transaction_path(@transaction) %>
+<%= link_to 'Назад', transactions_path %>
 </div>

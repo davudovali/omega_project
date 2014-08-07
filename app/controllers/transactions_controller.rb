@@ -1,7 +1,9 @@
 class TransactionsController < ApplicationController
   
   def index 
-    @transactions = Transaction.paginate(per_page: 30, page: params[:page])
+    @transactions = Transaction.all.paginate(per_page: 30, page: params[:page])
+    order = params[:order] == "asc" ? "asc" : "desc"
+    @transactions = @transactions.order("created_at #{order}")
   end
 
   def new
