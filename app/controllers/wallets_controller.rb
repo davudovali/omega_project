@@ -1,7 +1,7 @@
 class WalletsController < ApplicationController
   
   def index
-    @wallets = Wallet.all
+    @wallets = current_user.wallets
   end
 
   def new
@@ -10,7 +10,7 @@ class WalletsController < ApplicationController
     
   def create
     params.permit!
-    @wallet = Wallet.create(params[:wallet])
+    @wallet = current_user.wallets.create(params[:wallet])
     if @wallet.errors.empty?
       redirect_to wallets_path
     else
