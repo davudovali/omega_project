@@ -1,6 +1,35 @@
 @import 'bootstrap.min.css'
 
 
+.error_notification 
+  display: block
+  color: black
+  width: 400px
+  height: auto
+  background: red
+  border-radius: 5px
+  padding: 5px
+
+input 
+  display: block
+  margin-top: 10px
+  margin-bottom: 10px
+
+input[type="checkbox"] 
+  position: absolute
+  left: -9999px
+
+
+input[type="checkbox"] + label 
+  background: url(checkbox.png) 0 0 no-repeat
+  padding-left: 20px
+
+
+input[type="checkbox"]:checked + label 
+  background-position: 0 -50px
+
+abbr[title="required"]
+  display: none
 
 body 
   background: rgb(240, 240, 240)
@@ -11,7 +40,6 @@ ul
   margin: 0
   padding: 0
   list-style: none
-
 ul:after 
   display: block
   content: ' '
@@ -73,7 +101,7 @@ header
 
 
 
-#work_place 
+.work_place 
   padding-top: 45px
   margin-left: 20px
 

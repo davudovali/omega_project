@@ -1,4 +1,6 @@
-<p><%= @wallet.name %></p>
+<%= render "layouts/header" %>
+<div class="work_place">
+  <p><%= @wallet.name %></p>
 <p>Summ: <b><%= @wallet.summ %></b></p>
 <ul><% @wallet.transactions.all.each do |i| %>
   <li><%= i.summ %>  <%= i.currency %>  - <%= link_to i.goal, i %></li>
@@ -7,3 +9,4 @@
 </ul>
 
 <%= link_to "Edit", edit_wallet_path(@wallet) %>
+</div>

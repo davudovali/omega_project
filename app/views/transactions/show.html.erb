@@ -1,3 +1,6 @@
+<%= render "layouts/header" %>
+<div class="work_place">
 <p>Цель: <%= @transaction.goal %></p>
 <p>Сумма: <b><%= @transaction.summ %></b></p>
 <%= link_to "Редактировать", edit_transaction_path(@transaction) %>
+</div>

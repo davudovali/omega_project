@@ -1,4 +1,6 @@
-h1 Create new expense
-= simple_form_for @expense do |f| 
-  = f.text_field :name
-  = f.submit "Создать транзакцию" 
+= render "layouts/header" 
+div.work_place
+  h1 Create new expense
+  = simple_form_for @expense do |f| 
+    = f.text_field :name
+    = f.submit "Создать транзакцию" 

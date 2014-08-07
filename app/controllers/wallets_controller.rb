@@ -10,4 +10,8 @@ class WalletsController < ApplicationController
   def show
     @wallet = Wallet.find(params[:id])
   end
+
+  def new
+    @wallet = Wallet.new
+  end
 end
