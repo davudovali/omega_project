@@ -12,9 +12,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'wallets#index'
   resources :transactions
-  resources :users do
-    resources :wallets
-  end
+  resources :wallets
   # resources :wallets, only: [:show, :edit, :update, :destroy]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
