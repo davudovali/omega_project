@@ -16,7 +16,4 @@
 //= require_tree .
 //= require bootstrap.min
 
-$("header").css("display", function() {
-  if $("#sign_in") return "none";
-})
 

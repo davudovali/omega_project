@@ -4,7 +4,8 @@
 <%= simple_form_for @transaction do |f| %>
 <%= render partial: "form", locals: { f: f } %>
 <%= f.submit "Создать транзакцию" %>
-<% end %>
 <%= link_to 'Назад', transactions_path %>
+<% end %>
+
 </div>
 
