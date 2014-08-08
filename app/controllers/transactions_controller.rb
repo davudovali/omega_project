@@ -13,7 +13,7 @@ class TransactionsController < ApplicationController
   def create
     params.permit!
     @transaction = Transaction.create(params[:transaction])
-      if @transaction.errors.empty?
+      if @transaction.save
         redirect_to @transaction
       else
         render "new"  
@@ -30,13 +30,12 @@ class TransactionsController < ApplicationController
   
   def update
     params.permit!
-    @transaction.update_attributes(params[:transaction])
-      if @transaction.errors.empty?
-        redirect_to @transaction
-      else
-        render "edit"
-      end
+    if @transaction.update_attributes(params[:transaction])
+      redirect_to @transaction
+    else
+      render "edit"
     end
+  end
 
   def destroy
     @transaction.destroy
