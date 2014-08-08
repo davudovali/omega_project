@@ -1,5 +1,5 @@
 = simple_form_for @wallet do |f|
 	= f.input :name
 	= f.input :summ
-	= f.input :currency
+	= f.input :currency, collection: ['RUB','USD','EUR','GBP']
 	= f.submit
