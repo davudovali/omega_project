@@ -1,4 +1,6 @@
-=begin require 'rails_helper'
+
+
+require 'rails_helper'
 
 RSpec.describe TransactionsController, :type => :controller do
  
@@ -8,6 +10,11 @@ RSpec.describe TransactionsController, :type => :controller do
       get :show, {id: transaction.id }
       expect(response).to render_template('show')
     end
+
+    it "showing a non-existent transaction should result in a RecordNotFound Error" do 
+     transaction_id = 0
+     expect { get :show, {:id => transaction_id}}.to raise_error ActiveRecord::RecordNotFound
+    end  
   end
 
   describe "edit action" do 
@@ -16,6 +23,12 @@ RSpec.describe TransactionsController, :type => :controller do
       get :edit, {id: transaction.id }
       expect(response).to render_template('edit')
     end
+
+    it "edit a non-existent transaction should result in a RecordNotFound Error" do 
+     transaction_id = 0
+     expect { get :edit, {:id => transaction_id}}.to raise_error ActiveRecord::RecordNotFound
+    end  
+
   end
 
   
@@ -24,19 +37,18 @@ RSpec.describe TransactionsController, :type => :controller do
       post :create, transaction: { summ: 400, goal: "TV" }
       @transaction = assigns(:transaction)
       expect(response).to redirect_to(@transaction)
+    end  
+
+    it "renders #new form if validations fail" do
+      post :create, transaction:{goal:''}
+      expect(response).to render_template('new')
     end
-  end
+ end
   
   describe "new action" do 
     it "renders 'new' template if valiadtions fail after trying
       to create an transaction" do
-      post :create, transaction: { summ: 100000 }
-      expect(response).to render_template("new")
-    end
-
-    it "renders 'new' template if valiadtions fail after trying
-      to create an transaction" do
-      post :create, transaction: { goal: 'car' }
+      post :create, transaction: { summ: "" ,goal:""}
       expect(response).to render_template("new")
     end
   end
@@ -49,19 +61,34 @@ RSpec.describe TransactionsController, :type => :controller do
       delete :destroy, id: transaction.id
       expect(response).to redirect_to(transactions_path) 
     end
+
+    it "deleting a non-existent transaction should result in a RecordNotFound Error" do 
+    transaction_id = 0
+    expect { delete :destroy, {:id => transaction_id}}.to raise_error ActiveRecord::RecordNotFound
+    end  
   end
 
   describe "update action" do 
-    it "renders edit page again" do
-      post :create, transaction: {goal: "ss", summ: nil}
+    before(:each) do
+      @transaction = FactoryGirl.create(:transaction)
+    end
+
+    it "renders #edit form if validations fail" do
+      put :update, id: @transaction.id, transaction: { goal: "" }
+      expect(response).to render_template("edit")
+    end
+
+    it "redirects to transactions page" do
+      put :update, id: @transaction.id, transaction: { summ: 444}
+      expect(response).to redirect_to(@transaction)
     end
   end
   
-  describe "GET 'home'" do
+  describe "index action" do
     it "returns http success" do
       get 'index'
       expect(response).to be_success
     end
   end  
 end 
-=end 
+

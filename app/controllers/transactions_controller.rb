@@ -1,9 +1,9 @@
 class TransactionsController < ApplicationController
-  
+  before_action  :find_transaction, only:[:show, :edit,:update, :destroy]
+    
   def index 
-    @transactions = Transaction.all.paginate(per_page: 30, page: params[:page])
     order = params[:order] == "asc" ? "asc" : "desc"
-    @transactions = @transactions.order("created_at #{order}")
+    @transactions = Transaction.order("created_at #{order}").paginate(per_page: 30, page: params[:page])
   end
 
   def new
@@ -13,7 +13,7 @@ class TransactionsController < ApplicationController
   def create
     params.permit!
     @transaction = Transaction.create(params[:transaction])
-      if @transaction.errors.empty?
+      if @transaction.save
         redirect_to @transaction
       else
         render "new"  
@@ -21,28 +21,31 @@ class TransactionsController < ApplicationController
   end
   
   def show
-    @transaction = Transaction.find(params[:id])
+
   end
 
   def edit
-    @transaction = Transaction.find(params[:id])
+
   end
   
   def update
     params.permit!
-    @transaction = Transaction.find(params[:id])
-    @transaction.update_attributes(params[:transaction])
-      if @transaction.errors.empty?
-        redirect_to @transaction
-      else
-        render "edit"
-      end
+    if @transaction.update_attributes(params[:transaction])
+      redirect_to @transaction
+    else
+      render "edit"
     end
+  end
 
   def destroy
-    @transaction = Transaction.find(params[:id])
     @transaction.destroy
     redirect_to transactions_path
   end
+  
+private
 
+  def find_transaction
+    @transaction = Transaction.find(params[:id])
+  end
+  
 end
