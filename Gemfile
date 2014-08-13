@@ -28,6 +28,11 @@ gem 'simple_form'
 
 gem 'slim-rails', '~>2.1'
 
+gem 'bootstrap-sass'
+
+gem 'twitter-bootstrap-rails'
+
+gem 'jquery-ui-rails'
 
 gem 'autoprefixer-rails'
 
