@@ -13,6 +13,7 @@ class TransactionsController < ApplicationController
   def create
     params.permit!
     @transaction = Transaction.create(params[:transaction])
+    @wallets = current_user.wallets
       if @transaction.save
         redirect_to @transaction
       else

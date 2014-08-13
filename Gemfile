@@ -28,6 +28,7 @@ gem 'simple_form'
 
 gem 'slim-rails'
 
+
 gem 'autoprefixer-rails'
 group :production do
 

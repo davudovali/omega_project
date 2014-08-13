@@ -1,8 +1,15 @@
-
-
+require 'spec_helper'
 require 'rails_helper'
 
 RSpec.describe TransactionsController, :type => :controller do
+
+  context "when user logged in" do
+    let(:user) { FactoryGirl.create(:user) }
+    subject { FactoryGirl.create(:wallet, user: user)}
+    
+    before do
+      sign_in user
+    end  
  
   describe "show action" do
     it "renders show template if an transaction is found" do 
@@ -90,5 +97,6 @@ RSpec.describe TransactionsController, :type => :controller do
       expect(response).to be_success
     end
   end  
+end
 end 
 
