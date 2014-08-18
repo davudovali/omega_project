@@ -1,13 +1,14 @@
 class WalletsController < ApplicationController
 
   before_action :find_wallet, only: [:show, :edit, :update, :destroy]
+  before_action :update_wallet_value
 
   def index
     @wallets = current_user.wallets
   end
 
   def new
-  	@wallet = Wallet.new  	
+    @wallet = Wallet.new    
   end
     
   def create
@@ -46,6 +47,12 @@ class WalletsController < ApplicationController
 
   def find_wallet
     @wallet = Wallet.find(params[:id])    
+  end
+
+  def update_wallet_value
+    current_user.wallets.each do |i|
+      i.summ = i.transactions.inject(0) {|sum, i| sum + i.summ }
+    end
   end
 
 end
