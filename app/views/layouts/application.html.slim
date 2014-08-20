@@ -1,10 +1,21 @@
 doctype html
 html
-   head
+  head
     title OmegaProject
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true 
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true 
-    = csrf_meta_tags 
-body
-      == yield 
-
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+    header
+      div
+        div
+          = link_to "Transactions", transactions_path
+        div
+          = link_to "User edit", edit_user_registration_path
+        div
+          - if current_user
+            = link_to "Wallets", wallets_path
+        div
+          = link_to "Log out", destroy_user_session_path, :method => :delete
+    #work_place
+      = yield

@@ -28,6 +28,11 @@ gem 'simple_form'
 
 gem 'slim-rails'
 
+gem 'bootstrap-sass'
+
+gem 'twitter-bootstrap-rails'
+
+gem 'jquery-ui-rails'
 
 gem 'autoprefixer-rails'
 group :production do
@@ -36,6 +41,8 @@ group :production do
   gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
   
 end
+
+gem 'figaro'
 
 group :development, :test do
 	gem 'pry-rails'

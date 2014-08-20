@@ -7,7 +7,7 @@ class WalletsController < ApplicationController
   end
 
   def new
-  	@wallet = Wallet.new  	
+    @wallet = Wallet.new    
   end
     
   def create
