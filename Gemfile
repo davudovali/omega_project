@@ -36,6 +36,8 @@ gem 'jquery-ui-rails'
 
 gem 'autoprefixer-rails'
 
+gem 'figaro'
+
 group :development, :test do
 	gem 'pry-rails'
 
