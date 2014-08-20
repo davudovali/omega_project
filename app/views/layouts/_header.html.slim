@@ -1,24 +1,2 @@
-header
-  ul.menu
-    li
-      a Transactions
-      ul.submenu
-        li = link_to "Transactions", transactions_path
-        li = link_to "New transaction", new_transaction_path 
 
-    li
-      a Wallets
-      ul.submenu 
-        li = link_to "Wallets", wallets_path 
-        li = link_to "New wallet", new_wallet_path
-    li
-      a Expenses
-      ul.submenu 
-        li = link_to "Expenses", expenses_path 
-        li = link_to "New expense", new_expense_path
-    li#user_menu
-      a User
-      ul.submenu 
-        li = link_to "User edit", edit_user_registration_path 
-        li = link_to "Log out", destroy_user_session_path, :method => :delete  
         

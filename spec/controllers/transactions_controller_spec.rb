@@ -40,11 +40,11 @@ RSpec.describe TransactionsController, :type => :controller do
 
   
   describe "create action" do
-    it "redirects to the transaction page after the transaction is created" do
-      post :create, transaction: { summ: 400, goal: "TV" }
-      @transaction = assigns(:transaction)
-      expect(response).to redirect_to(@transaction)
-    end  
+    it "create new object" do 
+      expect{
+        post :create, transaction: FactoryGirl.attributes_for(:transaction)
+      }.to change(Transaction, :count).by(1)
+    end
 
     it "renders #new form if validations fail" do
       post :create, transaction:{goal:''}
