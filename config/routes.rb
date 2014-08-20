@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
-  devise_for :users, :controllers => { registrations: 'profiles' }
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   root 'wallets#index'
   resources :transactions
   resources :wallets
-
+  
   resources :expenses
 
   # resources :wallets, only: [:show, :edit, :update, :destroy]

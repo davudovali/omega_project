@@ -40,12 +40,6 @@ RSpec.describe TransactionsController, :type => :controller do
 
   
   describe "create action" do
-    it "create new object" do 
-      expect{
-        post :create, transaction: FactoryGirl.attributes_for(:transaction)
-      }.to change(Transaction, :count).by(1)
-    end
-
     it "renders #new form if validations fail" do
       post :create, transaction:{goal:''}
       expect(response).to render_template('new')
