@@ -9,7 +9,7 @@ div.work_place
 				th= Wallet.human_attribute_name(:currency)
 				th= Wallet.human_attribute_name(:goal)
 			tbody
-				-	@wallet.transactions.all.each do |t|
+				-	@wallet.transactions.each do |t|
 					tr
 						td= t.summ
 						td= t.currency
