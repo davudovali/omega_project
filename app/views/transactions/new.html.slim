@@ -1,0 +1,7 @@
+= render "layouts/header"
+div.work_place
+  h1 New transaction
+  = simple_form_for @transaction do |f| 
+    = render partial: "form", locals: { f: f }
+    = f.submit "Создать транзакцию"
+    = link_to 'Назад', transactions_path

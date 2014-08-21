@@ -11,3 +11,4 @@ script:
 before_script:
  - cp config/database.yml.sample config/database.yml
  - psql -c 'create database pm_test' -U postgres 
+ - chmod +x bin/rake

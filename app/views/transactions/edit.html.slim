@@ -1,0 +1,9 @@
+= render "layouts/header"
+.work_place
+  h1 Редактирование транзакции
+  = simple_form_for @transaction do |f|
+    = render partial: "form", locals: { f: f }
+    = f.submit "Сохранить "
+    = link_to "Удалить транзакцию", transaction_path(@transaction),
+      method: :delete, data: { confirm: "Уверены?" }
+  = link_to 'Назад', transactions_path
