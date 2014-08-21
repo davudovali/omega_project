@@ -3,7 +3,7 @@ class TransactionsController < ApplicationController
     
   def index 
     order = params[:order] == "asc" ? "asc" : "desc"
-    @transactions = Transaction.order("created_at #{order}").paginate(per_page: 30, page: params[:page])
+    @transactions = Transaction.order_tr(order).paginate(per_page: 30, page: params[:page])
   end
 
   def new

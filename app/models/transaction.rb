@@ -4,6 +4,8 @@ class Transaction < ActiveRecord::Base
 	validates :summ, numericality: true
   validates :goal, length: {in: 1..100}
 
+  scope :order_tr, ->(order) { order("created_at #{order}") } 
+
   after_save :calculate_summ
 
   protected
