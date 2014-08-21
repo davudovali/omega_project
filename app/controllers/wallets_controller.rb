@@ -12,8 +12,7 @@ class WalletsController < ApplicationController
     
   def create
     params.permit!
-    @wallet = current_user.wallets.create(params[:wallet])
-    if @wallet.errors.empty?
+    if current_user.wallets.create(params[:wallet])
       redirect_to wallets_path
     else
       render "new"  
@@ -25,8 +24,7 @@ class WalletsController < ApplicationController
 
   def update
     params.permit!
-    @wallet.update_attributes(params[:wallet])
-    if @wallet.errors.empty?
+    if @wallet.update_attributes(params[:wallet])
       redirect_to wallet_path
     else
       render "edit"
@@ -39,7 +37,6 @@ class WalletsController < ApplicationController
   end
 
   def show
-    @wallet = Wallet.find(params[:id])
   end
 
 

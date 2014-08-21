@@ -12,13 +12,11 @@ class TransactionsController < ApplicationController
 
   def create
     params.permit!
-    @transaction = Transaction.create(params[:transaction])
-    @wallets = current_user.wallets
-      if @transaction.save
-        redirect_to @transaction
-      else
-        render "new"  
-      end
+    if Transaction.create(params[:transaction])
+      redirect_to transactions_path
+    else
+      render "new"  
+    end
   end
   
   def show
