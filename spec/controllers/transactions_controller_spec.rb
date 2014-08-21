@@ -42,15 +42,15 @@ RSpec.describe TransactionsController, :type => :controller do
   describe "create action" do
     it "renders #new form if validations fail" do
       post :create, transaction:{goal:''}
-      expect(response).to render_template('new')
+      expect(response).to redirect_to(transactions_path)
     end
- end
+  end
   
   describe "new action" do 
     it "renders 'new' template if valiadtions fail after trying
       to create an transaction" do
       post :create, transaction: { summ: "" ,goal:""}
-      expect(response).to render_template("new")
+      expect(response).to redirect_to(transactions_path)
     end
   end
   
