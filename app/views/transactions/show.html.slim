@@ -1,0 +1,12 @@
+= render "layouts/header"
+.work_place
+  p
+    | Цель: #{@transaction.goal}
+  p
+    | Сумма:
+    b= @transaction.summ
+  p
+    | Создана:
+    b= @transaction.created_at
+  = link_to "Редактировать", edit_transaction_path(@transaction)
+  = link_to 'Назад', transactions_path
