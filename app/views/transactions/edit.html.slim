@@ -1,0 +1,12 @@
+= render "layouts/header"
+div.work_place
+  h1 Редактирование транзакцию
+  = simple_form_for @transaction do |f| 
+    = render  "form"
+    = link_to "Удалить транзакцию", transaction_path(@transaction),
+method: :delete, data: { confirm: "Уверены?" } 
+
+
+
+
+

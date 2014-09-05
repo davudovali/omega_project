@@ -1,0 +1,7 @@
+= simple_form_for @transaction do |f|
+  = f.input :summ , label: "Сумма"
+  = f.input :goal, label: "Цель"
+  = f.association :wallet, collection: current_user.wallets
+  = f.association :expense, collection: current_user.expenses
+  = f.submit "Сохранить "
+  = link_to 'Назад', transactions_path 

@@ -1,0 +1,16 @@
+= render "layouts/header"
+div.work_place
+  h1 Все транзакции
+  p  Сортировка:
+  = link_to "Новые сверху", transactions_path(order: "desc") 
+  = link_to "Старые сверху", transactions_path(order: "asc") 
+
+  ul
+    - @transactions.each do |i| 
+      li= link_to i.goal + " - " + i.summ.to_s, i 
+  div.digg_pagination
+    div.page_info
+      = page_entries_info @transactions
+    = will_paginate @transactions, :container => false
+  = link_to 'Новая транзакция', new_transaction_path(@transaction)  
+

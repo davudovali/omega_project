@@ -69,7 +69,6 @@ RSpec.describe ExpensesController, :type => :controller do
       end
     end  
 
-
     describe "DELETE #destroy" do
       before(:each) { @expense= FactoryGirl.create :expense, user: user }
       it "delete the expense" do
