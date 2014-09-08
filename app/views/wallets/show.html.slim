@@ -1,17 +1,18 @@
 = render "layouts/header"
 div.work_place
-	b= @wallet.name
-	p= @wallet.summ
-	table.table
-		thead
-			tr
-				th= Wallet.human_attribute_name(:summ)
-				th= Wallet.human_attribute_name(:currency)
-				th= Wallet.human_attribute_name(:goal)
-			tbody
-				-	@wallet.transactions.all.each do |t|
-					tr
-						td= t.summ
-						td= t.currency
-						td= t.goal
-	= link_to 'Back', wallets_path, class: 'btn'
+  b= @wallet.name
+  p= @wallet.summ
+  table.table
+    thead
+      tr
+        th= Wallet.human_attribute_name(:summ)
+        th= Wallet.human_attribute_name(:currency)
+        th= Wallet.human_attribute_name(:goal)
+      tbody
+        -  @wallet.transactions.each do |t|
+          tr
+            td= t.summ
+            td= t.currency
+            td= t.goal
+  = link_to 'Back', wallets_path, class: 'btn btn-success'
+

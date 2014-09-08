@@ -40,23 +40,17 @@ RSpec.describe TransactionsController, :type => :controller do
 
   
   describe "create action" do
-    it "redirects to the transaction page after the transaction is created" do
-      post :create, transaction: { summ: 400, goal: "TV" }
-      @transaction = assigns(:transaction)
-      expect(response).to redirect_to(@transaction)
-    end  
-
     it "renders #new form if validations fail" do
       post :create, transaction:{goal:''}
-      expect(response).to render_template('new')
+      expect(response).to redirect_to(transactions_path)
     end
- end
+  end
   
   describe "new action" do 
     it "renders 'new' template if valiadtions fail after trying
       to create an transaction" do
       post :create, transaction: { summ: "" ,goal:""}
-      expect(response).to render_template("new")
+      expect(response).to redirect_to(transactions_path)
     end
   end
   

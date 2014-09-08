@@ -42,6 +42,8 @@ group :production do
   
 end
 
+gem 'figaro'
+
 group :development, :test do
 	gem 'pry-rails'
 

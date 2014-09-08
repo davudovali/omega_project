@@ -11,8 +11,7 @@ class ExpensesController < ApplicationController
     
   def create
     params.permit!
-    @expense = current_user.expenses.create(params[:expense])
-    if @expense.errors.empty?
+    if current_user.expenses.create(params[:expense])
       redirect_to expenses_path
     else
       render "new"  
@@ -23,9 +22,8 @@ class ExpensesController < ApplicationController
   end
 
   def update
-    params.permit!
-    @expense.update_attributes(params[:expense])
-    if @expense.errors.empty?
+    params.permit!    
+    if @expense.update_attributes(params[:expense])
       redirect_to expense_path
     else
       render "edit"
@@ -38,7 +36,6 @@ class ExpensesController < ApplicationController
   end
 
   def show
-    @expense = Expense.find(params[:id])
   end
 
 

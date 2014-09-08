@@ -1,19 +1,18 @@
 class WalletsController < ApplicationController
 
   before_action :find_wallet, only: [:show, :edit, :update, :destroy]
-  before_action :update_wallet_value
+
   def index
     @wallets = current_user.wallets
   end
 
   def new
-  	@wallet = Wallet.new  	
+    @wallet = Wallet.new    
   end
     
   def create
     params.permit!
-    @wallet = current_user.wallets.create(params[:wallet])
-    if @wallet.errors.empty?
+    if current_user.wallets.create(params[:wallet])
       redirect_to wallets_path
     else
       render "new"  
@@ -25,8 +24,7 @@ class WalletsController < ApplicationController
 
   def update
     params.permit!
-    @wallet.update_attributes(params[:wallet])
-    if @wallet.errors.empty?
+    if @wallet.update_attributes(params[:wallet])
       redirect_to wallet_path
     else
       render "edit"
@@ -39,7 +37,6 @@ class WalletsController < ApplicationController
   end
 
   def show
-    @wallet = Wallet.find(params[:id])
   end
 
 
@@ -49,9 +46,4 @@ class WalletsController < ApplicationController
     @wallet = Wallet.find(params[:id])    
   end
 
-  def update_wallet_value
-    current_user.wallets.each do |i|
-      i.summ = i.transactions.inject(0) {|sum, i| sum + i.summ }
-    end
-  end
 end

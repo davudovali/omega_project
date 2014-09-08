@@ -34,6 +34,17 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: '0.0.0.0:3000' }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default charset: 'utf-8'
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.yandex.ru',
+    port: 25,
+    domain: 'rbomegaproject.com',
+    user_name: ENV['email_name'],
+    password: ENV['email_pass'],
+    authentication: 'plain',
+    enable_starttls_auto: true
+  }
 end

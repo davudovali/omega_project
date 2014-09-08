@@ -1,7 +1,22 @@
-= render "layouts/header" 
+= render "layouts/header"
 div.work_place
-  ul
-    - @expenses.each do |i|
-      li = i.name
-
+  h1 Expenses
+  table.table
+    thead
+      tr
+        th= Expense.human_attribute_name(:name)
+        th= Expense.human_attribute_name(:summ)
+        th= Expense.human_attribute_name(:currency)
+        th Action
+      tbody
+        -  @expenses.each do |w|
+          tr
+            td= link_to w.name, expense_path(w)  
+            td= w.summ
+            td= w.currency
+            td
+              = link_to 'Edit', edit_expense_path(w)
+              |   |
+              = link_to 'Delete',  expense_path(w), method: :delete, remote: true, data: { confirm: 'Are you sure?' }
+  = link_to 'New', new_expense_path, class: 'btn btn-success'
 
