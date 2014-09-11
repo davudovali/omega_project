@@ -35,6 +35,9 @@ gem 'twitter-bootstrap-rails'
 gem 'jquery-ui-rails'
 
 gem 'autoprefixer-rails'
+
+gem 'goog_currency'
+
 group :production do
 
   gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'

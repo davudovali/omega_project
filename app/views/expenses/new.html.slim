@@ -3,4 +3,5 @@ div.work_place
   h1 Create new expense
   = simple_form_for @expense do |f| 
     = f.text_field :name
+    = f.input :currency, collection: ['RUB','USD','EUR','GBP']
     = f.submit "Создать транзакцию" 

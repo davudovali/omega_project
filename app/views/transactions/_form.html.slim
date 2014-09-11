@@ -1,14 +1,9 @@
-<<<<<<< HEAD
 = simple_form_for @transaction do |f|
   = f.input :summ , label: "Сумма"
   = f.input :goal, label: "Цель"
   = f.association :wallet, collection: current_user.wallets
   = f.association :expense, collection: current_user.expenses
+  = f.input :currency, collection: ['RUB','USD','EUR','GBP']
   = f.submit "Сохранить "
   = link_to 'Назад', transactions_path 
-=======
-= f.input :summ , label: "Сумма"
-= f.input :goal, label: "Цель"
-= f.association :wallet, collection: current_user.wallets
-= f.association :expense, collection: current_user.expenses
->>>>>>> a5e8ff646ba4cc422ccd7621c2ceb35fd9c92c8c
+
