@@ -36,7 +36,7 @@ gem 'jquery-ui-rails'
 
 gem 'autoprefixer-rails'
 
-gem 'goog_currency'
+gem 'money-rails'
 
 group :production do
 
