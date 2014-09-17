@@ -7,4 +7,10 @@ class Wallet < ActiveRecord::Base
   validates :summ, numericality: true
   validates :currency, format: {with: /(USD|RUB|EUR|GBP)/}
   validates_associated :user
+
+  def update_summ
+  	self.summ = self.transactions.inject(0){|summ, i| summ + i.summ.to_money(i.currency).exchange_to(self.currency).to_f}
+
+  	self.save
+  end
 end

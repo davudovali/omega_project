@@ -4,6 +4,7 @@ class WalletsController < ApplicationController
 
   def index
     @wallets = current_user.wallets
+    @wallets.each {|i| i.update_summ}
   end
 
   def new
